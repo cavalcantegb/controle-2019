@@ -17,12 +17,11 @@ G_closed_loop0 = feedback(tipo0); # Função de Transferência em Malha Fechada
 
 [y,t]=step(G_closed_loop0, 100);
 u=ones(size(t));
-plot(t,y,'g',t,u,'b')
+plot(t,y,'m',t,u,'r')
 axis([0,10,0,1.1])
 xlabel('Tempo(segundos)')
 ylabel('Amplitude')
-title('Erro de Regime_')
-legend('entrada', 'saida');
+title('Erro de Regime')
 hold on;
 
 %Entrada Rampa
@@ -39,6 +38,6 @@ sys_cl=feedback(G,1);
 t=0:0.1:100;
 u=0.5*t.*t;
 [y,t,x]=lsim(G_closed_loop0,u,t);
-plot(t,y,'r')
-#axis([0,9.9,0,1.1])
+plot(t,y,'g')
+legend('entrada degrau','saída', 'entrada rampa', 'entrada quadratico');
 hold off;

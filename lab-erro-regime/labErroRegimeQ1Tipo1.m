@@ -17,7 +17,7 @@ G_closed_loop1 = feedback(tipo1); # Função de Transferência em Malha Fechada
 
 [y,t]=step(G_closed_loop1);
 u=ones(size(t));
-plot(t,y,'g')
+plot(t,y,'m')
 axis([0,25,0,10])
 xlabel('Tempo(segundos)')
 ylabel('Amplitude')
@@ -28,8 +28,7 @@ hold on;
 t=0:0.1:100;
 u=t;
 [y,t,x]=lsim(G_closed_loop1,u,t);
-plot(t,y,'b',t,u,'y')
-legend('entrada', 'saida');
+plot(t,y,'b',t,u,'r')
 
 %Entrada Parabola
 den1 = [1 5 6 0]; 
@@ -38,6 +37,7 @@ sys_cl=feedback(G,1);
 t=0:0.1:100;
 u=0.5*t.*t;
 [y,t,x]=lsim(G_closed_loop1,u,t);
-plot(t,y,'r')
+plot(t,y,'g')
+legend('degrau','rampa', 'saida', 'quadratico');
 
 hold off;
