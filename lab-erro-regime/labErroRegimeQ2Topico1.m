@@ -20,7 +20,7 @@ t=0:0.1:100;
 u=t;
 [y,t,x]=lsim(G_closed_loop1,u,t);
 plot(t,y,'b',t,u,'y')
-legend('erro', 'sinal');
+legend('rampa', 'sinal');
 
 axis([0,25,0,20])
 xlabel('Tempo(segundos)')
