@@ -1,19 +1,19 @@
-# Universidade Federal do Ceará - Centro de Tecnologia - Departamento de Teleinformática
-# Disciplina: Introdução aos Sistemas de Controle
-# Trabalho: Laboratório de Erro de Regime
-# Professor: Tarcísio
+# Universidade Federal do Cearï¿½ - Centro de Tecnologia - Departamento de Teleinformï¿½tica
+# Disciplina: Introduï¿½ï¿½o aos Sistemas de Controle
+# Trabalho: Laboratï¿½rio de Erro de Regime
+# Professor: Tarcï¿½sio
 # Grupo:  Glauton Cardoso dos Santos
-#         Guilherme Bastos Cavalcante 
-#         Yerlon Sousa Magalhães
+#         Guilherme Bastos Cavalcante
+#         Yerlon Sousa Magalhï¿½es
 
 clc; clear;  close all;         # limpa o terminal e as variaveis de ambiente
 pkg load control;                 # importa o pacote de controle
 
 %Entrada Degrau
-num = [1];                        # Numerador da Função de Transferência
-den = [1 3 6];                    # Denominador da Função de Transferência
-tipo0 = tf(num,den)         
-G_closed_loop0 = feedback(tipo0); # Função de Transferência em Malha Fechada
+num = [1];                        # Numerador da Funï¿½ï¿½o de Transferï¿½ncia
+den = [1 3 6];                    # Denominador da Funï¿½ï¿½o de Transferï¿½ncia
+tipo0 = tf(num,den)
+G_closed_loop0 = feedback(tipo0); # Funï¿½ï¿½o de Transferï¿½ncia em Malha Fechada
 
 [y,t]=step(G_closed_loop0, 100);
 u=ones(size(t));
@@ -39,5 +39,5 @@ t=0:0.1:100;
 u=0.5*t.*t;
 [y,t,x]=lsim(G_closed_loop0,u,t);
 plot(t,y,'g')
-legend('entrada degrau','saída', 'entrada rampa', 'entrada quadratico');
+legend('entrada degrau','saï¿½da', 'entrada rampa', 'entrada quadratico');
 hold off;
